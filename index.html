@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+
+    <!------ css links ------->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="image">
+            <img src="img/bg.jpg" alt="profile">
+        </div>
+        <div class="content">
+            <div class="title">
+                Card Hover Animation
+            </div>
+            <div class="sub_title">
+                HTML and CSS(Animation)
+            </div>
+            <div class="bottom">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum accusamus accusantium facere voluptatibus dolorem! Dolore magni culpa sed dicta, vitae dolorem soluta porro obcaecati praesentium.</p>
+                <button>Read More</button>
+            </div>
+        </div>
+    </div>
+  
+  
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        $('.card').hover(
+            function(){
+                if($(this).hasClass('active')){
+                    $('.card .bottom').slideUp(
+                        function(){
+                            $('.card').removeClass('active');
+                        }
+                    );
+                }else{
+                    $('.card').addClass('active');
+                    $('.card .bottom').stop().slideDown();
+                }
+            }
+        );
+        // $('.card').hover(function(){
+        //     if($(this).hasClass("active")){
+        //         $('.card .bottom').slideUp(function(){
+        //             $('.card').removeClass("active");
+        //         });
+        //     }else{
+        //         $('.card').addClass("active");
+        //         $('.card .bottom').stop().slideDown();
+        //     }
+        // });
+    </script>
+
+
+</body>
+</html>
